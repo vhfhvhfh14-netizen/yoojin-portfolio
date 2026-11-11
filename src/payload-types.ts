@@ -274,6 +274,16 @@ export interface Project {
    * Representative image shown in the project list
    */
   thumbnail: string | Media;
+  /**
+   * Case study images displayed in order on the detail page
+   */
+  gallery?:
+    | {
+        image: string | Media;
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   summary: string;
   challenge?: string | null;
   approach?: string | null;
@@ -494,6 +504,13 @@ export interface ProjectsSelect<T extends boolean = true> {
         id?: T;
       };
   thumbnail?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        caption?: T;
+        id?: T;
+      };
   summary?: T;
   challenge?: T;
   approach?: T;
