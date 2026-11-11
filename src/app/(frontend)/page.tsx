@@ -8,7 +8,7 @@ export default async function HomePage() {
   return (
     <main className="overflow-hidden bg-[#f7f6f2] text-[#20201e]">
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-6 md:px-12 md:py-8">
-        <Link className="font-display text-xl font-semibold tracking-[-0.06em]" href="/">ji.yoon</Link>
+        <Link className="font-display text-xl font-semibold tracking-[-0.06em]" href="/">Yoojin Lee</Link>
         <div className="hidden gap-8 text-xs font-medium uppercase tracking-[0.12em] md:flex"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
         <a className="text-xs font-medium uppercase tracking-[0.12em]" href="#contact">Let&apos;s talk →</a>
       </nav>

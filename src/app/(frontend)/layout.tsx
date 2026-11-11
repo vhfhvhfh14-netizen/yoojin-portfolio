@@ -8,7 +8,7 @@ import {
 } from "@/lib/make-site-settings"
 import "./styles.css"
 
-const defaultTitle = "figma-make-app"
+const defaultTitle = "Yoojin Lee — UX/UI Designer"
 const title = makeSiteSettings.title ?? defaultTitle
 const description =
   makeSiteSettings.description ??
