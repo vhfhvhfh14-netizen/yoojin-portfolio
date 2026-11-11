@@ -1,6 +1,7 @@
 import { getPayload } from "payload"
 import config from "@payload-config"
 import type { Config } from "@/payload-types"
+import { unstable_cache } from "next/cache"
 
 type CollectionSlug = keyof Config["collections"]
 
@@ -44,21 +45,23 @@ export async function findBySlug<T extends CollectionSlug>(
     depth?: number
   },
 ): Promise<Config["collections"][T] | null> {
-  const payload = await getPayloadClient()
   const { draft = false, depth = 2 } = options ?? {}
-
-  const result = await payload.find({
-    collection,
-    overrideAccess: false,
-    where: {
-      slug: { equals: slug },
+  return unstable_cache(
+    async () => {
+      const payload = await getPayloadClient()
+      const result = await payload.find({
+        collection,
+        overrideAccess: false,
+        where: { slug: { equals: slug } },
+        depth,
+        limit: 1,
+        draft,
+      })
+      return result.docs[0] as Config["collections"][T] ?? null
     },
-    depth,
-    limit: 1,
-    draft,
-  })
-
-  return result.docs[0] as Config["collections"][T] ?? null
+    [String(collection), slug, String(depth), String(draft)],
+    { tags: [String(collection), `${String(collection)}:${slug}`] },
+  )()
 }
 
 /**

@@ -83,6 +83,7 @@ export interface Config {
     media: Media;
     folders: Folder;
     tags: Tag;
+    projects: Project;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -95,6 +96,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     folders: FoldersSelect<false> | FoldersSelect<true>;
     tags: TagsSelect<false> | TagsSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -247,6 +249,49 @@ export interface Tag {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: string;
+  title: string;
+  slug: string;
+  projectType: 'mobile-app' | 'web-service' | 'dashboard' | 'redesign' | 'design-system';
+  /**
+   * Example: 2024.03 — 2024.08
+   */
+  period?: string | null;
+  /**
+   * Example: UX/UI 100%
+   */
+  contribution?: string | null;
+  roles?:
+    | {
+        role: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Representative image shown in the project list
+   */
+  thumbnail: string | Media;
+  summary: string;
+  challenge?: string | null;
+  approach?: string | null;
+  outcome?: string | null;
+  sortOrder?: number | null;
+  createdBy?: {
+    relationTo: 'admins';
+    value: string | Admin;
+  } | null;
+  updatedBy?: {
+    relationTo: 'admins';
+    value: string | Admin;
+  } | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -284,6 +329,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'tags';
         value: string | Tag;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: string | Project;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -430,6 +479,33 @@ export interface TagsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  projectType?: T;
+  period?: T;
+  contribution?: T;
+  roles?:
+    | T
+    | {
+        role?: T;
+        id?: T;
+      };
+  thumbnail?: T;
+  summary?: T;
+  challenge?: T;
+  approach?: T;
+  outcome?: T;
+  sortOrder?: T;
+  createdBy?: T;
+  updatedBy?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -511,7 +587,7 @@ export interface CollectionsWidget {
 export interface CollectionQueryWidget {
   data?: {
     title?: string | null;
-    relatedCollection: 'admins' | 'media' | 'folders' | 'tags';
+    relatedCollection: 'admins' | 'media' | 'folders' | 'tags' | 'projects';
     where?:
       | {
           [k: string]: unknown;
@@ -533,7 +609,7 @@ export interface CollectionQueryWidget {
  */
 export interface ActivityWidget {
   data?: {
-    excludedCollections?: ('admins' | 'media' | 'folders' | 'tags')[] | null;
+    excludedCollections?: ('admins' | 'media' | 'folders' | 'tags' | 'projects')[] | null;
   };
   width: 'small' | 'medium' | 'large' | 'x-large' | 'full';
 }
