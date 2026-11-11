@@ -16,11 +16,6 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
   const project = await findBySlug('projects', slug)
   if (!project) notFound()
   const image = getImage(project.thumbnail)
-  const gallery = project.gallery?.flatMap((item) => {
-    const galleryImage = getImage(item.image)
-    return galleryImage ? [{ ...galleryImage, caption: item.caption ?? '' }] : []
-  }) ?? []
-
   return (
     <main className="min-h-screen bg-[#f7f6f2] px-6 py-8 text-[#20201e] md:px-12">
       <div className="mx-auto max-w-[1200px]">
@@ -36,17 +31,6 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
           </dl>
         </header>
         {image && <Image alt={image.alt} className="aspect-[16/9] w-full object-cover" height={image.height} priority src={image.url} width={image.width} />}
-        {gallery.length > 0 && (
-          <section className="space-y-10 py-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em]">Case study</p>
-            {gallery.map((item) => (
-              <figure key={item.url}>
-                <Image alt={item.alt} className="w-full rounded-sm" height={item.height} src={item.url} width={item.width} />
-                {item.caption && <figcaption className="mt-3 text-xs text-zinc-500">{item.caption}</figcaption>}
-              </figure>
-            ))}
-          </section>
-        )}
         <div className="grid gap-12 py-20 md:grid-cols-[0.7fr_1.3fr]">
           <p className="text-xs font-semibold uppercase tracking-[0.14em]">Overview</p>
           <div className="space-y-12">
@@ -56,6 +40,23 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
             ) : null)}
           </div>
         </div>
+        {project.caseStudy?.length ? (
+          <section className="border-t border-zinc-900/15 py-20">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em]">Case study</p>
+            <div className="mt-12 divide-y divide-zinc-900/15">
+              {project.caseStudy.map((section) => (
+                <article className="grid gap-5 py-9 md:grid-cols-[220px_1fr]" key={section.id}>
+                  <div>{section.eyebrow && <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#ee5a35]">{section.eyebrow}</p>}</div>
+                  <div>
+                    <h2 className="font-display text-3xl tracking-[-0.045em]">{section.heading}</h2>
+                    <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-600">{section.body}</p>
+                    {section.highlight && <p className="mt-5 border-l-2 border-[#ee5a35] pl-4 text-sm font-medium leading-6">{section.highlight}</p>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
       </div>
     </main>
   )

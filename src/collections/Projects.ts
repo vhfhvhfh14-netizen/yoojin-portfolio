@@ -65,6 +65,17 @@ export const Projects: CollectionConfig = {
         { name: 'caption', type: 'text' },
       ],
     },
+    {
+      name: 'caseStudy',
+      type: 'array',
+      admin: { description: 'Text sections displayed in the project case study' },
+      fields: [
+        { name: 'eyebrow', type: 'text' },
+        { name: 'heading', type: 'text', required: true },
+        { name: 'body', type: 'textarea', required: true },
+        { name: 'highlight', type: 'text' },
+      ],
+    },
     { name: 'summary', type: 'textarea', required: true },
     { name: 'challenge', type: 'textarea' },
     { name: 'approach', type: 'textarea' },
