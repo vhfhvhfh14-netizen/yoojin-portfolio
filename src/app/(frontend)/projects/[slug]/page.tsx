@@ -46,25 +46,28 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
           <section className="py-20 md:py-28">
             <p className="text-xs font-semibold uppercase tracking-[0.14em]">Case study</p>
             <div className="mt-8">
-              {project.caseStudy.map((section) => (
-                <article className="border-t border-zinc-900/15 py-12 md:py-16" key={section.id}>
-                  <div className="grid gap-6 md:grid-cols-[220px_1fr]">
-                    <div>{section.eyebrow && <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#ee5a35]">{section.eyebrow}</p>}</div>
-                    <div>
-                      <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.045em] md:text-4xl">{section.heading}</h2>
-                      <p className="mt-5 max-w-2xl text-sm leading-7 text-zinc-600">{section.body}</p>
-                      {section.highlight && <p className="mt-6 max-w-2xl border-l-2 border-[#ee5a35] pl-4 text-sm font-medium leading-6">{section.highlight}</p>}
+              {project.caseStudy.map((section) => {
+                const reference = getImage(section.referenceImage)
+                return (
+                  <article className="border-t border-zinc-900/15 py-12 md:py-16" key={section.id}>
+                    {reference ? (
+                      <figure className="mb-10 md:mb-14">
+                        <Image alt={reference.alt} className="w-full bg-zinc-100 object-cover" height={reference.height} src={reference.url} width={reference.width} />
+                      </figure>
+                    ) : (
+                      <div className="mb-10 flex aspect-[16/8] items-center justify-center bg-zinc-100 text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-400 md:mb-14">Visual reference</div>
+                    )}
+                    <div className="grid gap-6 md:grid-cols-[220px_1fr]">
+                      <div>{section.eyebrow && <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#ee5a35]">{section.eyebrow}</p>}</div>
+                      <div>
+                        <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.045em] md:text-4xl">{section.heading}</h2>
+                        <p className="mt-5 max-w-2xl text-sm leading-7 text-zinc-600">{section.body}</p>
+                        {section.highlight && <p className="mt-6 max-w-2xl border-l-2 border-[#ee5a35] pl-4 text-sm font-medium leading-6">{section.highlight}</p>}
+                      </div>
                     </div>
-                  </div>
-                  {getImage(section.referenceImage) ? (
-                    <figure className="mt-10 md:mt-14">
-                      <Image alt={getImage(section.referenceImage)?.alt ?? ''} className="w-full bg-zinc-100 object-cover" height={getImage(section.referenceImage)?.height ?? 1} src={getImage(section.referenceImage)?.url ?? ''} width={getImage(section.referenceImage)?.width ?? 1} />
-                    </figure>
-                  ) : (
-                    <div className="mt-10 flex aspect-[16/8] items-center justify-center bg-zinc-100 text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-400 md:mt-14">Visual reference</div>
-                  )}
-                </article>
-              ))}
+                  </article>
+                )
+              })}
             </div>
           </section>
         ) : null}

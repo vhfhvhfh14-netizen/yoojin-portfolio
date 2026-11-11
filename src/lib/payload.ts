@@ -59,7 +59,7 @@ export async function findBySlug<T extends CollectionSlug>(
       })
       return result.docs[0] as Config["collections"][T] ?? null
     },
-    ['project-content-v3', String(collection), slug, String(depth), String(draft)],
+    ['project-content-v4', String(collection), slug, String(depth), String(draft)],
     { tags: [String(collection), `${String(collection)}:${slug}`] },
   )()
 }
