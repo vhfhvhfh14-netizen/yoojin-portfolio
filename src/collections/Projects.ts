@@ -51,6 +51,20 @@ export const Projects: CollectionConfig = {
       required: true,
       admin: { description: 'Representative image shown in the project list' },
     },
+    {
+      name: 'gallery',
+      type: 'array',
+      admin: { description: 'Case study images displayed in order on the detail page' },
+      fields: [
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+        { name: 'caption', type: 'text' },
+      ],
+    },
     { name: 'summary', type: 'textarea', required: true },
     { name: 'challenge', type: 'textarea' },
     { name: 'approach', type: 'textarea' },

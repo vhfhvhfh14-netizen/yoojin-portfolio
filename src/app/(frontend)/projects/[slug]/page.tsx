@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { findBySlug } from '@/lib/payload'
-import { getProjects } from '@/lib/projects'
+import { getProjectSlugs } from '@/lib/projects'
 
 function getImage(media: unknown) {
   if (!media || typeof media !== 'object' || !('url' in media)) return null
@@ -16,6 +16,10 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
   const project = await findBySlug('projects', slug)
   if (!project) notFound()
   const image = getImage(project.thumbnail)
+  const gallery = project.gallery?.flatMap((item) => {
+    const galleryImage = getImage(item.image)
+    return galleryImage ? [{ ...galleryImage, caption: item.caption ?? '' }] : []
+  }) ?? []
 
   return (
     <main className="min-h-screen bg-[#f7f6f2] px-6 py-8 text-[#20201e] md:px-12">
@@ -32,6 +36,17 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
           </dl>
         </header>
         {image && <Image alt={image.alt} className="aspect-[16/9] w-full object-cover" height={image.height} priority src={image.url} width={image.width} />}
+        {gallery.length > 0 && (
+          <section className="space-y-10 py-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em]">Case study</p>
+            {gallery.map((item) => (
+              <figure key={item.url}>
+                <Image alt={item.alt} className="w-full rounded-sm" height={item.height} src={item.url} width={item.width} />
+                {item.caption && <figcaption className="mt-3 text-xs text-zinc-500">{item.caption}</figcaption>}
+              </figure>
+            ))}
+          </section>
+        )}
         <div className="grid gap-12 py-20 md:grid-cols-[0.7fr_1.3fr]">
           <p className="text-xs font-semibold uppercase tracking-[0.14em]">Overview</p>
           <div className="space-y-12">
@@ -47,6 +62,6 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
 }
 
 export async function generateStaticParams() {
-  const projects = await getProjects()
-  return projects.map((project) => ({ slug: project.slug }))
+  const slugs = await getProjectSlugs()
+  return slugs.map((slug) => ({ slug }))
 }

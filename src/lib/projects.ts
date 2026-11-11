@@ -26,3 +26,15 @@ export const getProjects = unstable_cache(
   ['projects'],
   { tags: ['projects'] },
 )
+
+export async function getProjectSlugs() {
+  const payload = await getPayloadClient()
+  const result = await payload.find({
+    collection: 'projects',
+    depth: 0,
+    limit: 100,
+    overrideAccess: false,
+    select: { slug: true },
+  })
+  return result.docs.map((project) => project.slug)
+}
