@@ -51,8 +51,8 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
                 return (
                   <article className="border-t border-zinc-900/15 py-12 md:py-16" key={section.id}>
                     {reference ? (
-                      <figure className="mb-10 md:mb-14">
-                        <Image alt={reference.alt} className="w-full bg-zinc-100 object-cover" height={reference.height} src={reference.url} width={reference.width} />
+                      <figure className="mb-10 aspect-[4/3] overflow-hidden bg-zinc-100 md:mb-14">
+                        <Image alt={reference.alt} className="h-full w-full object-cover object-center" height={reference.height} src={reference.url} width={reference.width} />
                       </figure>
                     ) : (
                       <div className="mb-10 flex aspect-[16/8] items-center justify-center bg-zinc-100 text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-400 md:mb-14">Visual reference</div>
