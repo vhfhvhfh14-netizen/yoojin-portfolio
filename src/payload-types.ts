@@ -293,6 +293,10 @@ export interface Project {
         heading: string;
         body: string;
         highlight?: string | null;
+        /**
+         * Optional visual reference for this section
+         */
+        referenceImage?: (string | null) | Media;
         id?: string | null;
       }[]
     | null;
@@ -530,6 +534,7 @@ export interface ProjectsSelect<T extends boolean = true> {
         heading?: T;
         body?: T;
         highlight?: T;
+        referenceImage?: T;
         id?: T;
       };
   summary?: T;
