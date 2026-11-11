@@ -31,27 +31,38 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
           </dl>
         </header>
         {image && <Image alt={image.alt} className="aspect-[16/9] w-full object-cover" height={image.height} priority src={image.url} width={image.width} />}
-        <div className="grid gap-12 py-20 md:grid-cols-[0.7fr_1.3fr]">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em]">Overview</p>
-          <div className="space-y-12">
-            <p className="font-display text-3xl leading-tight tracking-[-0.04em] md:text-4xl">{project.summary}</p>
-            {[['Challenge', project.challenge], ['Approach', project.approach], ['Outcome', project.outcome]].map(([label, copy]) => copy ? (
-              <section key={label as string}><h2 className="text-xs font-semibold uppercase tracking-[0.14em]">{label}</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-600">{copy}</p></section>
-            ) : null)}
+        <div className="border-b border-zinc-900/15 py-20 md:grid md:grid-cols-[220px_1fr] md:gap-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em]">Project overview</p>
+          <div className="mt-6 md:mt-0">
+            <p className="max-w-3xl text-xl leading-8 tracking-[-0.025em] md:text-2xl md:leading-9">{project.summary}</p>
+            <div className="mt-10 grid gap-8 md:grid-cols-3">
+              {[['Challenge', project.challenge], ['Approach', project.approach], ['Outcome', project.outcome]].map(([label, copy]) => copy ? (
+                <section key={label as string}><h2 className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">{label}</h2><p className="mt-2 text-sm leading-6 text-zinc-600">{copy}</p></section>
+              ) : null)}
+            </div>
           </div>
         </div>
         {project.caseStudy?.length ? (
-          <section className="border-t border-zinc-900/15 py-20">
+          <section className="py-20 md:py-28">
             <p className="text-xs font-semibold uppercase tracking-[0.14em]">Case study</p>
-            <div className="mt-12 divide-y divide-zinc-900/15">
+            <div className="mt-8">
               {project.caseStudy.map((section) => (
-                <article className="grid gap-5 py-9 md:grid-cols-[220px_1fr]" key={section.id}>
-                  <div>{section.eyebrow && <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#ee5a35]">{section.eyebrow}</p>}</div>
-                  <div>
-                    <h2 className="font-display text-3xl tracking-[-0.045em]">{section.heading}</h2>
-                    <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-600">{section.body}</p>
-                    {section.highlight && <p className="mt-5 border-l-2 border-[#ee5a35] pl-4 text-sm font-medium leading-6">{section.highlight}</p>}
+                <article className="border-t border-zinc-900/15 py-12 md:py-16" key={section.id}>
+                  <div className="grid gap-6 md:grid-cols-[220px_1fr]">
+                    <div>{section.eyebrow && <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#ee5a35]">{section.eyebrow}</p>}</div>
+                    <div>
+                      <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.045em] md:text-4xl">{section.heading}</h2>
+                      <p className="mt-5 max-w-2xl text-sm leading-7 text-zinc-600">{section.body}</p>
+                      {section.highlight && <p className="mt-6 max-w-2xl border-l-2 border-[#ee5a35] pl-4 text-sm font-medium leading-6">{section.highlight}</p>}
+                    </div>
                   </div>
+                  {getImage(section.referenceImage) ? (
+                    <figure className="mt-10 md:mt-14">
+                      <Image alt={getImage(section.referenceImage)?.alt ?? ''} className="w-full bg-zinc-100 object-cover" height={getImage(section.referenceImage)?.height ?? 1} src={getImage(section.referenceImage)?.url ?? ''} width={getImage(section.referenceImage)?.width ?? 1} />
+                    </figure>
+                  ) : (
+                    <div className="mt-10 flex aspect-[16/8] items-center justify-center bg-zinc-100 text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-400 md:mt-14">Visual reference</div>
+                  )}
                 </article>
               ))}
             </div>

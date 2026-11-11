@@ -74,6 +74,12 @@ export const Projects: CollectionConfig = {
         { name: 'heading', type: 'text', required: true },
         { name: 'body', type: 'textarea', required: true },
         { name: 'highlight', type: 'text' },
+        {
+          name: 'referenceImage',
+          type: 'upload',
+          relationTo: 'media',
+          admin: { description: 'Optional visual reference for this section' },
+        },
       ],
     },
     { name: 'summary', type: 'textarea', required: true },
