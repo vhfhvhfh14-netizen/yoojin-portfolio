@@ -1,1 +1,10 @@
-{}
+{
+  "description": "개인과 창작자가 작업물, 경력, 역량을 소개하고 온라인에서 전문적인 인상을 전할 수 있는 포트폴리오 웹사이트입니다.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
