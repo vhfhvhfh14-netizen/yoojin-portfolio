@@ -284,6 +284,18 @@ export interface Project {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Text sections displayed in the project case study
+   */
+  caseStudy?:
+    | {
+        eyebrow?: string | null;
+        heading: string;
+        body: string;
+        highlight?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   summary: string;
   challenge?: string | null;
   approach?: string | null;
@@ -509,6 +521,15 @@ export interface ProjectsSelect<T extends boolean = true> {
     | {
         image?: T;
         caption?: T;
+        id?: T;
+      };
+  caseStudy?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        body?: T;
+        highlight?: T;
         id?: T;
       };
   summary?: T;
