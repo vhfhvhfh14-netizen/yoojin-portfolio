@@ -23,7 +23,7 @@ export const getProjects = unstable_cache(
       image: mediaImage(project.thumbnail),
     }))
   },
-  ['projects'],
+  ['projects-v2'],
   { tags: ['projects'] },
 )
 

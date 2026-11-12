@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { findBySlug } from '@/lib/payload'
 import { getProjectSlugs } from '@/lib/projects'
+import { WidgetEditorV2CaseStudy } from '@/components/WidgetEditorV2CaseStudy'
 
 function getImage(media: unknown) {
   if (!media || typeof media !== 'object' || !('url' in media)) return null
@@ -15,6 +16,7 @@ export default async function ProjectPage({ params }: PageProps<'/projects/[slug
   const { slug } = await params
   const project = await findBySlug('projects', slug)
   if (!project) notFound()
+  if (slug === 'photowidget-widget-editor-v2') return <WidgetEditorV2CaseStudy />
   const image = getImage(project.thumbnail)
   return (
     <main className="min-h-screen bg-[#f7f6f2] px-6 py-8 text-[#20201e] md:px-12">

@@ -1,0 +1,170 @@
+import Link from 'next/link'
+
+function Placeholder({ label, className = '' }: { label: string; className?: string }) {
+  return (
+    <div className={`flex aspect-[4/3] items-center justify-center border border-zinc-900/10 bg-[#ebe9e3] px-6 text-center text-xs font-medium tracking-[-0.01em] text-zinc-400 ${className}`}>
+      [{label}]
+    </div>
+  )
+}
+
+function SectionHeading({ index, label, title }: { index: string; label: string; title: string }) {
+  return (
+    <div className="grid gap-5 md:grid-cols-[220px_1fr]">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ee5a35]">{index} — {label}</p>
+      <h2 className="max-w-4xl text-3xl font-semibold leading-[1.15] tracking-[-0.045em] md:text-5xl">{title}</h2>
+    </div>
+  )
+}
+
+const bodyClass = 'max-w-2xl text-sm leading-7 text-zinc-600'
+
+export function WidgetEditorV2CaseStudy() {
+  return (
+    <main className="min-h-screen bg-[#f7f6f2] px-6 py-8 text-[#20201e] md:px-12">
+      <div className="mx-auto max-w-[1200px]">
+        <Link className="text-xs font-medium uppercase tracking-[0.14em] text-zinc-500 hover:text-zinc-900" href="/#work">← All projects</Link>
+
+        <header className="py-16 md:py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ee5a35]">Photowidget · Product redesign</p>
+          <h1 className="mt-5 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.065em] md:text-8xl">Widget Editor V2</h1>
+          <p className="mt-8 max-w-3xl text-2xl font-medium leading-[1.35] tracking-[-0.035em] md:text-4xl">6년간 누적된 레거시와 사용성 문제를 개선한 위젯 편집 기능 개편</p>
+          <div className="mt-12 flex flex-wrap gap-2">
+            {['UX analysis', 'UX/UI redesign', 'Editor flow', 'Dev collaboration', 'Migration compatibility'].map((role) => (
+              <span className="rounded-full border border-zinc-900/20 px-4 py-2 text-xs text-zinc-600" key={role}>{role}</span>
+            ))}
+          </div>
+        </header>
+
+        <Placeholder label="Hero — V2 편집 화면" />
+
+        <section className="grid gap-10 border-b border-zinc-900/15 py-20 md:grid-cols-[220px_1fr]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em]">Overview</p>
+          <div>
+            <p className="max-w-3xl text-xl leading-8 tracking-[-0.025em] md:text-2xl md:leading-9">6년간 새로운 위젯 기능이 지속적으로 추가되면서 편집 경험이 복잡해졌고, 개발 구조에도 레거시가 누적되어 안정성과 확장성에 한계가 생겼습니다.</p>
+            <p className={`${bodyClass} mt-7`}>팀은 장기적인 유지보수와 기능 확장을 위해 V2 전면 개편을 추진했습니다. 기존 사용자 콘텐츠의 호환성을 고려하면서 편집 UX/UI를 재설계하고, 개발팀과 새로운 편집 구조를 정의했습니다.</p>
+            <dl className="mt-12 grid gap-8 border-t border-zinc-900/15 pt-8 sm:grid-cols-2">
+              <div><dt className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">Service</dt><dd className="mt-2 text-sm">Photowidget</dd></div>
+              <div><dt className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">Role</dt><dd className="mt-2 text-sm leading-6">UX/UI 구조 재설계 · 편집 모델 정의 · 개발 협업</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section className="py-24 md:py-32">
+          <SectionHeading index="01" label="Background" title="6년간 기능은 계속 추가됐지만, 편집 구조는 개편되지 않아 UX/UI가 복잡해졌습니다." />
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            <Placeholder label="V1 — 누적된 편집 UI" />
+            <Placeholder label="V2 — 개편 목표 구조" />
+          </div>
+          <div className="mt-12 grid gap-10 md:grid-cols-[220px_1fr]">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-400">Why rebuild</p>
+            <div>
+              <p className={bodyClass}>서비스 운영 과정에서 새로운 위젯 기능이 지속적으로 추가됐지만 기존 편집 구조는 그대로 유지됐습니다. 위젯 종류마다 편집 방식이 달라졌고, 변경된 iOS 정책에 맞지 않는 기능도 남아 있었습니다. 레거시 버그가 반복되고 신규 위젯 확장도 어려워졌습니다.</p>
+              <p className="mt-7 max-w-2xl border-l-2 border-[#ee5a35] pl-4 text-sm font-medium leading-6">장기적인 유지보수와 기능 확장을 위해, 데이터 이전 위험을 감수하더라도 V2를 새롭게 구축하기로 결정했습니다.</p>
+            </div>
+          </div>
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            <div className="border-t border-zinc-900/20 pt-5"><p className="text-xs font-semibold uppercase tracking-[0.12em]">기존 구조의 문제</p><ul className="mt-4 space-y-2 text-sm leading-6 text-zinc-600"><li>복잡해진 UX/UI</li><li>OS 기능과 맞지 않는 편집 화면</li><li>레거시 버그와 확장 제약</li></ul></div>
+            <div className="border-t border-[#ee5a35] pt-5"><p className="text-xs font-semibold uppercase tracking-[0.12em]">V2 개편 목표</p><ul className="mt-4 space-y-2 text-sm leading-6 text-zinc-600"><li>편집 UX/UI 구조 개선</li><li>제품 안정성 개선</li><li>신규 위젯 확장 기반 마련</li></ul></div>
+          </div>
+        </section>
+
+        <section className="border-t border-zinc-900/15 py-24 md:py-32">
+          <SectionHeading index="02" label="Problem definition" title="위젯 편집 흐름을 하나로 정리하고, OS에서 지원하는 기능에 맞게 편집 경험을 재설계해야 했습니다." />
+          <p className={`${bodyClass} mt-10 md:ml-[260px]`}>세부 사용자 행동을 확인할 이벤트 데이터가 부족해 신규 입사자 온보딩 분석 자료와 직접 사용하며 발견한 문제를 기반으로 개선 과제를 구체화했습니다.</p>
+
+          <div className="mt-20">
+            <div className="rounded-sm bg-zinc-900 px-6 py-8 text-white md:px-10">
+              <p className="text-xs uppercase tracking-[0.14em] text-zinc-400">V1 editing flow</p>
+              <div className="mt-7 flex flex-col gap-3 text-sm md:flex-row md:items-center">
+                {['스타일 선택', '편집뷰 진입', '나가기', '스타일 재선택', '편집뷰 재진입'].map((step, index) => (
+                  <div className="flex items-center gap-3" key={step}><span className={`rounded-full px-4 py-3 ${index === 2 ? 'bg-[#ee5a35]' : 'bg-white/10'}`}>{step}</span>{index < 4 && <span className="hidden text-zinc-500 md:inline">→</span>}</div>
+                ))}
+              </div>
+              <p className="mt-6 text-xs text-[#ff947b]">스타일을 바꾸려면 편집을 중단하고 처음부터 다시 시작해야 했습니다.</p>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-2"><Placeholder label="V1 — 위젯 스타일 선택 화면" /><Placeholder label="V1 — 편집뷰" /></div>
+            <div className="mt-10 grid gap-6 md:grid-cols-[220px_1fr]"><p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#ee5a35]">Problem 01</p><div><h3 className="text-2xl font-semibold tracking-[-0.035em]">스타일을 바꾸려면 편집을 다시 시작해야 했습니다.</h3><p className={`${bodyClass} mt-4`}>편집 화면을 유지하면서 여러 위젯 스타일을 탐색하고 변경할 수 있는 흐름이 필요했습니다.</p></div></div>
+          </div>
+
+          <div className="mt-24">
+            <div className="grid gap-5 md:grid-cols-2"><Placeholder label="Before — 잠금 화면 편집 UI" /><Placeholder label="Actual — 설치된 잠금 화면 위젯" /></div>
+            <div className="mt-10 grid gap-6 md:grid-cols-[220px_1fr]"><p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#ee5a35]">Problem 02</p><div><h3 className="text-2xl font-semibold tracking-[-0.035em]">OS 기능과 실제 편집 UI가 일치하지 않았습니다.</h3><p className={`${bodyClass} mt-4`}>홈 화면과 잠금 화면은 지원 기능이 다르지만 하나의 편집 화면에서 토글로 전환했습니다. 잠금 화면에 적용되지 않는 기능까지 노출되어 편집 결과와 설치 후 모습이 달라졌습니다.</p></div></div>
+          </div>
+        </section>
+
+        <section className="border-t border-zinc-900/15 py-24 md:py-32">
+          <SectionHeading index="03" label="Design 01" title="홈/잠금 화면의 편집 구조를 분리해 OS별 지원 기능에 맞게 재설계했습니다." />
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            <div><Placeholder label="V1 — 홈/잠금 통합 편집뷰" /><p className="mt-3 text-xs text-zinc-500">Before · 내부 토글과 지원되지 않는 기능 노출</p></div>
+            <div><Placeholder label="V2 — 홈/잠금 분리된 편집 화면" /><p className="mt-3 text-xs text-zinc-500">After · OS 환경에 맞는 독립 편집뷰와 프리뷰</p></div>
+          </div>
+          <p className={`${bodyClass} mt-12 md:ml-[260px]`}>개발팀과 구현 구조를 논의한 결과 두 환경에 각각 독립된 편집 구조를 제공하기로 했습니다. 홈/잠금 화면의 진입점과 편집뷰를 분리하고, 잠금 화면은 iOS에서 실제 적용 가능한 기능을 기준으로 UI와 프리뷰를 다시 구성했습니다.</p>
+        </section>
+
+        <section className="border-t border-zinc-900/15 py-24 md:py-32">
+          <SectionHeading index="04" label="Design 02" title="편집 화면에서 위젯 스타일을 바로 변경할 수 있도록 제작 흐름을 개선했습니다." />
+          <Placeholder className="mt-14" label="V2 — 스타일 변경 인터랙션" />
+          <p className={`${bodyClass} mt-10 md:ml-[260px]`}>편집 전에 선택해야 했던 위젯 스타일을 Custom &gt; 위젯 스타일 영역으로 이동했습니다. 사용자는 편집 화면을 나가지 않고 여러 스타일을 변경하고 비교하며 제작할 수 있습니다.</p>
+
+          <div className="mt-20 grid gap-5 md:grid-cols-2">
+            <div className="border border-zinc-900/10 p-6"><p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-400">Before</p><p className="mt-5 text-sm leading-7">스타일 선택 → 개별 편집뷰 → 나가기 → 다른 스타일 선택</p></div>
+            <div className="border border-[#ee5a35]/50 bg-[#ee5a35]/5 p-6"><p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#ee5a35]">After</p><p className="mt-5 text-sm leading-7">편집뷰 유지 → Custom에서 스타일 선택 및 즉시 변경</p></div>
+          </div>
+
+          <div className="mt-24 grid gap-12 md:grid-cols-[1fr_1fr] md:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#ee5a35]">UI × implementation model</p>
+              <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em]">새로운 편집 방식을 위해 레이어 기반 구조를 정의했습니다.</h3>
+              <p className={`${bodyClass} mt-5`}>공통 바탕인 Background와 그 위에서 변경되는 위젯 요소인 Custom으로 UI를 구분했습니다. 개발팀과 기존 구현 방식의 제약을 논의하고 이 구분을 코드에서도 레이어로 적용하기로 합의했습니다.</p>
+            </div>
+            <div className="relative aspect-[4/3] bg-[#dedbd3] p-8">
+              <div className="absolute inset-x-8 bottom-8 top-20 flex items-end justify-center bg-white/60 pb-8 text-xs text-zinc-500">Background · color / image</div>
+              <div className="absolute inset-x-20 bottom-20 top-8 flex items-center justify-center border-2 border-[#ee5a35] bg-white text-sm font-semibold shadow-xl">Custom · replaceable widget style</div>
+              <p className="absolute bottom-2 left-8 text-[10px] uppercase tracking-[0.12em] text-zinc-500">Background / Custom layer model</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-zinc-900/15 py-24 md:py-32">
+          <SectionHeading index="05" label="Design 03" title="기존 위젯 디자인을 유지하면서 V2로 전환하기 위해 싱글/듀얼 모드를 설계했습니다." />
+          <div className="mt-14 grid gap-4 md:grid-cols-3">
+            <Placeholder label="V1 — S·M·L 크기별 기존 위젯 디자인" />
+            <Placeholder label="V2 규칙 적용 시 — 복합 디자인 손실" />
+            <Placeholder label="호환성 확보가 필요한 기존 디자인" />
+          </div>
+          <p className={`${bodyClass} mt-10 md:ml-[260px]`}>V2에서는 동일 스타일이 모든 크기에 일관되게 적용되도록 규칙을 정리했습니다. 하지만 이를 그대로 적용하면 기존 중형 위젯에 결합된 두 번째 디자인이 사라졌습니다. 30개 이상의 기존 디자인 중 절반 이상이 이런 복합 구성이었습니다.</p>
+
+          <div className="mt-24 grid gap-5 md:grid-cols-2">
+            <div><Placeholder label="V2 — Single Mode" /><p className="mt-3 text-xs text-zinc-500">기본 위젯 디자인 하나를 중형 전체에 적용</p></div>
+            <div><Placeholder label="V2 — Dual Mode 전환 인터랙션" /><p className="mt-3 text-xs text-zinc-500">왼쪽 기본 디자인 + 오른쪽에서 선택한 다른 디자인</p></div>
+          </div>
+          <div className="mt-10 grid gap-10 md:grid-cols-[220px_1fr]">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#ee5a35]">Compatibility</p>
+            <div><p className={bodyClass}>기존 복합 디자인은 마이그레이션 과정에서 Dual Mode로 반영해 원래 모습을 유지했습니다. 사용자는 두 모드를 전환하고 오른쪽 디자인도 직접 선택할 수 있습니다.</p><p className="mt-6 max-w-2xl border-l-2 border-[#ee5a35] pl-4 text-sm font-medium leading-6">기존 디자인 호환성을 지키면서 서로 다른 위젯을 조합하는 편집 자유도도 확보했습니다.</p></div>
+          </div>
+          <aside className="mt-16 border-t border-zinc-900/15 pt-6 md:ml-[260px]"><p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-400">Technical constraint</p><p className="mt-3 max-w-2xl text-xs leading-6 text-zinc-500">S·M·L을 독립 제작하는 방안도 검토했지만, 기존 콘텐츠를 세 개로 분리하면 데이터와 앱 용량이 증가할 수 있어 기존 통합 구조를 유지했습니다.</p></aside>
+        </section>
+
+        <section className="border-t border-zinc-900/15 py-24 md:py-32">
+          <SectionHeading index="06" label="Outcome" title="V2 개편 이후 제품 안정성이 개선되고, 새로운 위젯 기능을 확장할 수 있게 됐습니다." />
+          <div className="mt-16 grid gap-px overflow-hidden border border-zinc-900/15 bg-zinc-900/15 md:grid-cols-3">
+            {[
+              ['01 · 제품 안정성', '약 30건 → 10건 미만', '월간 위젯 작동 관련 CS. 레거시 코드 재구축 이후 고객 문의가 감소한 프로젝트 전체의 성과입니다.'],
+              ['02 · 기능 확장성', '신규 위젯 3종 출시', 'V2 구조를 활용해 기존에는 확장하기 어려웠던 신규 위젯 기능을 추가했습니다.'],
+              ['03 · 사용자 경험', '약 60% 긍정 응답', 'V2 출시 후 사용성 설문 결과이며, 개편 전후의 직접 비교 수치는 아닙니다.'],
+            ].map(([label, value, description]) => (
+              <article className="bg-[#f7f6f2] p-7 md:min-h-[260px] md:p-9" key={label}>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-400">{label}</p>
+                <p className="mt-10 text-3xl font-semibold tracking-[-0.05em]">{value}</p>
+                <p className="mt-5 text-xs leading-6 text-zinc-500">{description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <footer className="border-t border-zinc-900/15 py-12"><Link className="text-xs font-semibold uppercase tracking-[0.14em] hover:text-[#ee5a35]" href="/#work">← Back to selected projects</Link></footer>
+      </div>
+    </main>
+  )
+}
