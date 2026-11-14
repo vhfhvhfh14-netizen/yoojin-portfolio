@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>위젯 탭으로 리뉴얼하여 위젯 만들기 진입률 개선 — Yoojin Lee</title>
+<meta name="description" content="포토위젯 제작 탭을 위젯 탭으로 리뉴얼한 케이스 스터디" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAARGVYSWZNTQAqAAAACAABh2kABAAAAAEAAAAaAAAAAAADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAAgoAMABAAAAAEAAAAgAAAAAKyGYvMAAAHLaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA2LjAuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT4xPC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4yODg8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+Mjg4PC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CvHMQOEAAAJYSURBVFgJ7VVN6zFRFD9ey0vYkJeUSFbEzpaNDeEzKHsbKd/A1o6vgbJSysbGQlkoZSHExoIIOc8993lMM2b8/+pRNm7NzD3n/O49v3vmzG9UyAZ8cKg/mJun/hL4VuBbgY9XQKukA8fjEdbrNWg0GrBYLGCz2WSw7XYLhLvdbuDxeECn00kwp9MJNpsN99ntdjAYDJK4YJASPg62EEOhEJrNZozH48gSSSDL5RL9fj+PJ5NJWZzA/X6fx2mPbrcrWS82QGyI5/V6nSSaX41GQxzCcrksxDqdjiR2N3q9noBpt9t3t+z5lACdOhaL8U0CgQDudju+eDabodVq5f58Pi/b8O4QE3hGkrBPCVCw1WqhSqXiyWq1GrmwWCxy22Qy4Xg85j6l21sIsAbDTCbDE3q9XqRSGo1GbpdKJaW8gu8tBGi30WiErIN5Umoo6guXy4Wr1UpIpjR5lcCvOhCNRqFQKPCvZr/f82elUgGn08nn/31TYv/oWywW6HA4+OnD4TAeDodHiMx+tQKKQvR4KrfbzcWGhCUYDALrAwlkOBwC+0qABId9OTymVv9a3L84yU5PDFI7umjcn2JotVqFVCoFuVxOUL/BYMAhRIQO8HTIaqfguF6vGIlE+CvIZrMyRLPZ5DGWBFmFMJFIoF6v5z5GDC+Xi2zN3fGjDtxBRIBEiZ0GlcSHErDGFASKiGi1Wkyn00j989NQUfBpef4FCDKdToF+MEwFwefzKS6Zz+cwmUzgfD4D+1cAq5oiTux8iYB4wbvnr7Xqu7OK9vsS+FbgW4GPV+AP9In/NkX0ofMAAAAASUVORK5CYII=" />
+<link rel="icon" type="image/svg+xml" href="/yoojin-portfolio/favicon.svg" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="/yoojin-portfolio/site.css" />
+</head>
+<body>
+<nav class="gnb">
+  <a href="/yoojin-portfolio/">HOME</a>
+  <a href="/yoojin-portfolio/about/">ABOUT</a>
+  <a href="/yoojin-portfolio/info/">INFO</a>
+</nav>
+
+<main class="page">
+  <div class="ph">위젯 탭 리뉴얼 Hero 이미지 플레이스홀더</div>
+
+  <header class="header text-col">
+    <p class="caption">Photowidget</p>
+    <h1>위젯 탭으로 리뉴얼하여 위젯 만들기 진입률 개선</h1>
+    <p>포토위젯의 핵심 경험인 위젯 만들기 화면 진입 상승을 위해 제작 탭을 위젯 탭으로 리뉴얼했어요. 저는 이 프로젝트에서 기획, UX/UI 디자인을 주도하였고, 개발부터 배포 스케줄 매니징을 했어요.</p>
+    <dl class="specs">
+      <div><dt>Period</dt><dd>2026.04 – 08</dd></div>
+      <div><dt>Platform</dt><dd>iOS</dd></div>
+      <div><dt>Team</dt><dd>디자인 1, iOS 개발 1, QA 1</dd></div>
+      <div><dt>Role</dt><dd>UX/UI 디자인 100%, 기획 100%</dd></div>
+    </dl>
+  </header>
+
+  <section>
+    <div class="ph">Background — 2주간 관찰한 제작 탭 ~ 위젯 만들기 진입 퍼널 이미지 플레이스홀더</div>
+    <div class="sec-text text-col">
+      <p class="caption">Background</p>
+      <h2>핵심 기능인 위젯 만들기, 그런데 60%가 만들기 화면에 진입하지 않았다</h2>
+      <div class="body">
+        <p>포토위젯은 사용자가 직접 위젯을 만드는 것이 핵심 경험이에요. 그런데 제작 탭 퍼널을 확인하니 60%가 위젯 만들기 화면에 진입하지 않았어요. 이는 우리 핵심 기능을 경험하지 못한 사용자가 많다는 것을 의미해요.</p>
+        <p>따라서 이번 프로젝트에서 위젯 만들기의 출발점인 제작 탭을 개선하기로 했어요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ph">Problem — As Is 화면 이미지 플레이스홀더</div>
+    <div class="sec-text text-col">
+      <p class="caption">Problem</p>
+      <h2>현재 제작 탭은 위젯 만들기를 유도하지 못했다</h2>
+      <div class="body">
+        <p>제작 탭은 위젯이 핵심 기능으로 인식되도록 진입점 간의 위계를 구분했고, 이를 통해 위젯 만들기를 유도하고자 했어요. 하지만 인터뷰를 진행해보니, 아래와 같이 사용되고 있었어요.</p>
+        <ol class="points">
+          <li><strong>위젯 만들기가 핵심 기능으로 인식되지 않았다</strong></li>
+          <li><strong>위젯을 만들 아이디어가 없으면 진입하지 않는다</strong></li>
+        </ol>
+        <p>위젯이 핵심 기능으로 인식되지 않는건 비슷한 카드형 구조의 문제라 생각했어요. 또한 진입점 만으로 위젯 만들기를 유도하지 못했다는 걸 알게 되어 이 두 문제를 해결할 방법을 고민하기 시작했어요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ph">Approach — 첫 시안 이미지 플레이스홀더</div>
+    <div class="sec-text text-col">
+      <p class="caption">Approach</p>
+      <h2>위젯 제작을 핵심 기능으로 인지시키고, 탐색을 통해 만들기를 유도하면 진입률이 오를 것이다</h2>
+      <div class="body">
+        <p>이 가설을 바탕으로 첫 시안을 만들었어요.</p>
+        <ol class="points">
+          <li><strong>위젯 진입점을 눈에 띄도록 개선</strong>진입점을 실물 그래픽과 함께 상단에 크게 분리해, 탭 진입 시, 위젯을 만드는 곳임을 알 수 있게 했어요.</li>
+          <li><strong>다른 진입점 위계 낮추기</strong>다른 기능은 작은 숏컷으로 묶어, 시선이 위젯 진입점으로 먼저 가도록 했어요.</li>
+          <li><strong>템플릿으로 둘러보고 시작하게</strong>다양한 템플릿을 보여줘, 아이디어가 없어도 둘러보다 골라서 시작할 수 있게 했어요.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ph">Usability Test 이미지 플레이스홀더</div>
+    <div class="sec-text text-col">
+      <p class="caption">Usability Test</p>
+      <h2>한 화면에 많은 걸 담다 보니, 정작 위젯 만들기와 템플릿은 눈에 띄지 않았다</h2>
+      <div class="body">
+        <p>신규 2, 기존 2 사용자를 대상으로 UT를 진행했어요.</p>
+        <ol class="points">
+          <li><strong>만들기 진입점을 4명 중 2명이 배너로 인식했어요.</strong>그래픽에 시선이 분산되면서 정작 만들기 진입점은 잘 발견하지 못했어요.</li>
+          <li><strong>다른 기능은 주로 Home에서 접근했어요.</strong>제작 탭에 남겨둔 진입점의 필요성을 재검토하고, 위젯 만들기에 집중하기로 했어요.</li>
+          <li><strong>템플릿은 첫 번째 태그 위주로 탐색했어요.</strong>다른 태그에 더 많은 템플릿이 있다는 사실을 인식하지 못했어요.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ph">Solution — As Is / 1차 시안 / To Be 화면 이미지 플레이스홀더</div>
+    <div class="sec-text text-col">
+      <p class="caption">Solution</p>
+      <h2>위젯 전용 탭으로 리뉴얼: 진입점은 심플하게, 탐색은 한눈에 보이도록</h2>
+      <div class="body">
+        <p>위젯 전용 탭이 핵심 기능 인지에 더 유의미할거라 판단해 과감히 좁혔어요.</p>
+        <ol class="points">
+          <li><strong>위젯 전용 탭으로 리뉴얼</strong>앱 정체성을 강조하고 탭 진입을 유도했어요.</li>
+          <li><strong>진입점과 최근에 만든 위젯 노출</strong>언제든 만들기 화면에 진입할 수 있게 했어요.</li>
+          <li><strong>세로 스크롤 구조로 변경</strong>다양한 템플릿 옵션을 노출했어요.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="outcome text-col">
+    <p class="caption">Results</p>
+    <h2>위젯 만들기 진입 사용자가 약 1.9배 늘었다</h2>
+    <ul>
+      <li><p class="metric">위젯 만들기 진입 사용자 약 1.9배 상승</p></li>
+      <li><p class="metric">템플릿으로 시작한 사용자 36%</p></li>
+      <li><p class="metric">제작 탭 진입 약 1.3배 상승</p></li>
+    </ul>
+    <table class="funnel">
+      <caption>제작 탭 퍼널 (2주간 사용자 수)</caption>
+      <thead><tr><th></th><th>개편 전</th><th>개편 후</th></tr></thead>
+      <tbody>
+        <tr><th>제작 탭 진입</th><td>11.4만</td><td>15.0만</td></tr>
+        <tr><th>위젯 만들기 화면 진입</th><td>4.5만</td><td>8.7만</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <nav class="pager" aria-label="프로젝트 이동">
+    <a class="pager-item prev" href="/yoojin-portfolio/projects/photowidget-save-conversion/">
+      <p class="caption">← 이전 프로젝트</p>
+      <div class="ph">썸네일 이미지 플레이스홀더</div>
+      <p class="card-title">저장 완수율을 높이기 위한 광고·구독 UX 개선</p>
+    </a>
+    <div></div>
+  </nav>
+
+  <footer class="foot text-col">
+    <a href="/yoojin-portfolio/#work">← All projects</a>
+  </footer>
+</main>
+</body>
+</html>
