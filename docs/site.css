@@ -142,9 +142,10 @@ a.card:hover .ph { opacity: .75; }
 }
 
 /* Figma edits (widget editor page) */
-.ph-wide { aspect-ratio: 1240 / 700; }
+.ph-hero { aspect-ratio: 1240 / 700; }
+.ph-wide { aspect-ratio: 1240 / 630; }
 .ph-short { aspect-ratio: 1240 / 387.5; }
-.ph-tall { aspect-ratio: 610 / 700; }
+.ph-tall { aspect-ratio: 610 / 630; }
 .sec .sec-text { padding: 32px 0 96px; }
 .sec .sec-text h2 { padding-bottom: 20px; }
 .sec-duo { padding-bottom: 96px; }
@@ -164,3 +165,4 @@ a.card:hover .ph { opacity: .75; }
   .goal { margin-top: 59px; padding-top: 59px; font-size: 20px; text-align: center; }
 }
 .sec .body p + p { margin-top: 0; }
+.sec .body p.sp { margin-top: 27px; }
