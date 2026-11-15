@@ -173,3 +173,13 @@ a.card:hover .ph { opacity: .75; }
 .sec .body p.callout { margin: 16px 0; padding-left: 16px; border-left: 2px solid #212121; font-weight: 600; }
 .sec .body p.callout-18 { margin: 18px 0; }
 .body strong.semi { font-weight: 600; }
+/* Figma spacing pass 2 (widget editor page) */
+.sec .sec-text h2, .duo-item h2 { padding-bottom: 24px; }
+.body-reg { font-weight: 400; }
+.sec .body p.callout { padding-left: 14px; }
+.goal::before { height: 31px; vertical-align: -0.35em; }
+@media (min-width: 768px) {
+  .sec .sec-text { padding-top: 36px; }
+  .duo-item .ph { margin-bottom: 36px; }
+  .duo-item .body { padding: 0 8px 0 0; }
+}
