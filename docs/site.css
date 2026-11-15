@@ -183,3 +183,13 @@ a.card:hover .ph { opacity: .75; }
   .duo-item .ph { margin-bottom: 36px; }
   .duo-item .body { padding: 0 8px 0 0; }
 }
+/* Figma pass 3: outcome image, hero/header gaps, pager, footer (widget editor page) */
+.sec-outcome .outcome { padding-top: 32px; padding-bottom: 96px; }
+.case-editor .outcome h2 { padding-bottom: 24px; }
+@media (min-width: 768px) {
+  .case-editor .ph-hero { margin-bottom: 38px; }
+  .case-editor .header + .sec { margin-top: 37px; }
+  .sec-outcome .outcome { padding-top: 36px; padding-bottom: 150px; }
+  .case-editor .pager { padding: 41px 0; }
+  .case-editor .foot { padding-top: 0; }
+}
