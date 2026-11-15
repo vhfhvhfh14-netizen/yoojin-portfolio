@@ -166,3 +166,7 @@ a.card:hover .ph { opacity: .75; }
 }
 .sec .body p + p { margin-top: 0; }
 .sec .body p.sp { margin-top: 27px; }
+@media (min-width: 768px) {
+  .goal { font-size: 24px; }
+  .duo-item { padding-bottom: 50px; }
+}
