@@ -172,3 +172,4 @@ a.card:hover .ph { opacity: .75; }
 }
 .sec .body p.callout { margin: 16px 0; padding-left: 16px; border-left: 2px solid #212121; font-weight: 600; }
 .sec .body p.callout-18 { margin: 18px 0; }
+.body strong.semi { font-weight: 600; }
