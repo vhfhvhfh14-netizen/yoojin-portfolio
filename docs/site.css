@@ -193,3 +193,5 @@ a.card:hover .ph { opacity: .75; }
   .case-editor .pager { padding: 41px 0; }
   .case-editor .foot { padding-top: 0; }
 }
+/* Figma pass 4: header body one paragraph, specs gap */
+@media (min-width: 768px) { .case-editor .header .specs { margin-top: 56px; } }
