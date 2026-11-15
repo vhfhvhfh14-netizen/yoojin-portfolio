@@ -140,3 +140,26 @@ a.card:hover .ph { opacity: .75; }
   .pager .next { text-align: right; }
   .pager .next .card-title { justify-content: flex-end; }
 }
+
+/* Figma edits (widget editor page) */
+.ph-wide { aspect-ratio: 1240 / 700; }
+.ph-short { aspect-ratio: 1240 / 387.5; }
+.ph-tall { aspect-ratio: 610 / 700; }
+.sec .sec-text { padding: 32px 0 96px; }
+.sec .sec-text h2 { padding-bottom: 20px; }
+.sec-duo { padding-bottom: 96px; }
+.duo { display: grid; grid-template-columns: 1fr; gap: 56px 20px; }
+.duo-item .ph { margin-bottom: 32px; }
+.duo-item h2 { font-size: 20px; font-weight: 600; line-height: 1.5; padding-bottom: 20px; }
+.goal { margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(0,0,0,.1);
+  font-size: 17px; font-weight: 600; line-height: 1.5; }
+.goal::before { content: ""; display: inline-block; width: 2px; height: 1.4em; background: #212121; margin-right: 14px; vertical-align: -0.3em; }
+@media (min-width: 768px) {
+  .duo { grid-template-columns: 1fr 1fr; }
+  .duo-item .ph { margin-bottom: 40px; }
+  .duo-item .caption, .duo-item h2, .duo-item .body { padding-left: 0; }
+  .duo-item .body { padding: 0 8px; }
+  .sec .sec-text { padding: 40px 32px 150px; }
+  .sec-duo { padding-bottom: 150px; }
+  .goal { margin-top: 59px; padding-top: 59px; font-size: 20px; text-align: center; }
+}
