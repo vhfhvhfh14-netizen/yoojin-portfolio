@@ -195,3 +195,34 @@ a.card:hover .ph { opacity: .75; }
 }
 /* Figma pass 4: header body one paragraph, specs gap */
 @media (min-width: 768px) { .case-editor .header .specs { margin-top: 56px; } }
+.sec .body p.sp18 { margin-top: 18px; }
+.sec .body p.sp16 { margin-top: 16px; }
+/* Save-conversion page (Figma 1682:101304) */
+.ph-hero-save { aspect-ratio: 1240 / 775; }
+.shot { display: block; width: 100%; height: auto; background: #232323; }
+.sec .body.stack { display: flex; flex-direction: column; gap: 16px; }
+.sec .body.stack > * { margin: 0 !important; }
+.olist { padding-left: 22px; line-height: 1.8; }
+.points-dot li::before { content: ""; }
+.result-panel { background: #f8f8f8; aspect-ratio: 1240 / 630; display: flex; align-items: center; justify-content: center; padding: 0 20px; }
+.outcome-list { list-style: none; width: 100%; max-width: 736px; border-top: 1px solid rgba(0,0,0,.1); }
+.outcome-list li { padding: 24px 0; border-bottom: 1px solid rgba(0,0,0,.1); }
+.outcome-list .metric { font-size: 17px; font-weight: 600; line-height: 1.5; }
+.outcome-list .desc { margin-top: 8px; color: rgba(33,33,33,.8); }
+.sec .body p.sp27 { margin-top: 27px; }
+.sec .body p.sp27 strong { font-weight: 700; }
+.lesson-item { display: block; }
+.sec .body .lesson-item p { margin: 0; }
+.lesson-title { font-size: 20px; font-weight: 600; line-height: 1.5; }
+.lesson-item .reg { font-weight: 400; }
+.sec .body .callout.lesson-item { margin: 0; padding-left: 14px; border-left: 2px solid #212121; }
+.sec-results .lesson-a { padding-bottom: 96px; }
+.sec-results .lesson-b { padding-top: 0; }
+@media (max-width: 767px) { .result-panel { aspect-ratio: auto; padding: 32px 20px; } }
+@media (min-width: 768px) {
+  .case-save .header + .sec { margin-top: -37px; }
+  .case-save .header { padding-bottom: 130px; }
+  .sec-results .lesson-a { padding-top: 92px; padding-bottom: 200px; }
+  .sec-results .lesson-b { padding-top: 36px; padding-bottom: 150px; }
+  .case-save .lesson-a h2 { padding-bottom: 24px; }
+}
