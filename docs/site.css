@@ -216,14 +216,11 @@ a.card:hover .ph { opacity: .75; }
 .lesson-title { font-size: 20px; font-weight: 600; line-height: 1.5; }
 .lesson-item .reg { font-weight: 400; }
 .sec .body .callout.lesson-item { margin: 0; padding-left: 14px; border-left: 2px solid #212121; }
-.sec-results .lesson-a { padding-bottom: 96px; }
-.sec-results .lesson-b { padding-top: 0; }
 @media (max-width: 767px) { .result-panel { aspect-ratio: auto; padding: 32px 20px; } }
 @media (min-width: 768px) {
   .case-save .header + .sec { margin-top: -37px; }
   .case-save .header { padding-bottom: 130px; }
-  .sec-results .lesson-a { padding-top: 92px; padding-bottom: 200px; }
   .sec-results .lesson-b { padding-top: 36px; padding-bottom: 150px; }
-  .case-save .lesson-a h2 { padding-bottom: 24px; }
 }
 .sec .body p.semi-line { font-weight: 600; }
+.sec-results .lesson-b .caption + .body { margin-top: 24px; }
