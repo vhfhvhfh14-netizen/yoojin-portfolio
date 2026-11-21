@@ -242,3 +242,10 @@ a.card:hover .ph { opacity: .75; }
   .split { grid-template-columns: 610fr 590fr; gap: 40px; align-items: center; }
   .sec.split .sec-text { padding: 0; }
 }
+/* Problem → experiments divider (Figma 1797:8159) */
+.exp-divider { border-top: 1px solid rgba(0,0,0,.1); padding: 32px 0; }
+.exp-head { font-size: 22px; font-weight: 600; line-height: 1.4; padding-left: 14px; border-left: 2px solid #212121; }
+@media (min-width: 768px) {
+  .exp-divider { padding: 40px 0; }
+  .exp-head { font-size: 28px; line-height: 31px; }
+}
