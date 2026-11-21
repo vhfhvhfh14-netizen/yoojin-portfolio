@@ -224,3 +224,9 @@ a.card:hover .ph { opacity: .75; }
 }
 .sec .body p.semi-line { font-weight: 600; }
 .sec-results .lesson-b .caption + .body { margin-top: 24px; }
+/* Test sections: method / result / cause as three cards */
+.cards3 { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 8px !important; }
+.card3 { background: #f6f6f6; border-radius: 12px; padding: 18px 20px 20px; }
+.card3 .k { font-size: 13px; font-weight: 500; line-height: 1.7; color: rgba(33,33,33,.6); padding-bottom: 4px; }
+.card3 .v { font-size: 15px; font-weight: 600; line-height: 1.6; }
+@media (min-width: 768px) { .cards3 { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
