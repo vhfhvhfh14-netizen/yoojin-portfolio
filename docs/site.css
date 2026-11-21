@@ -249,3 +249,8 @@ a.card:hover .ph { opacity: .75; }
   .exp-divider { padding: 40px 0; }
   .exp-head { font-size: 28px; line-height: 31px; }
 }
+/* Figma 1797:8159 gap 50, First Test pb 100 */
+@media (min-width: 768px) {
+  .exp-divider { padding-top: 50px; }
+  .split.split-tight { padding-bottom: 100px; }
+}
