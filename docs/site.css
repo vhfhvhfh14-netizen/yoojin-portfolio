@@ -230,3 +230,15 @@ a.card:hover .ph { opacity: .75; }
 .card3 .k { font-size: 13px; font-weight: 500; line-height: 1.7; color: rgba(33,33,33,.6); padding-bottom: 4px; }
 .card3 .v { font-size: 15px; font-weight: 600; line-height: 1.6; }
 @media (min-width: 768px) { .cards3 { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+/* Hypothesis callout + side-by-side test sections (Figma 1794:8092, 1703:22126) */
+.sec .body p.callout.callout-lg { font-size: 20px; line-height: 30px; }
+.split { display: grid; grid-template-columns: 1fr; gap: 32px; padding-bottom: 96px; }
+.sec.split .sec-text { padding: 0; }
+@media (min-width: 768px) {
+  .split { padding-bottom: 150px; }
+  .sec.split .sec-text { padding: 0 32px; }
+}
+@media (min-width: 1024px) {
+  .split { grid-template-columns: 610fr 590fr; gap: 40px; align-items: center; }
+  .sec.split .sec-text { padding: 0; }
+}
