@@ -273,3 +273,12 @@ a.card:hover .ph { opacity: .75; }
 .case-save .shot, .case-save .result-panel, .case-editor .sec .ph { background: #f1f3f5; }
 .case-save .sec .ph-wide { background: #f6f8fa; }
 .case-editor .ph-hero { background: #f6f8fa; }
+/* Widget-tab page (Figma 1682:101429) */
+.case-tab .sec.split .body .points { margin: 27px 0; }
+.case-tab .split .body .points li::before { top: 16px; font-size: 13px; font-weight: 600; }
+.case-tab .split .body .points li { padding-top: 15px; padding-bottom: 15px; }
+.body .points-red li::before { background: #ff4040; border-radius: 6px; }
+.body .points.points-dot li::before { content: ""; }
+.case-tab .lesson-item p:not(.lesson-title):not(.reg) { font-weight: 500; }
+@media (min-width: 768px) { .case-tab .header + .sec { margin-top: 0; } }
+.case-tab .result-panel { background: #f6f8fa; }
