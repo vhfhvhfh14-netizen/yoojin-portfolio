@@ -269,3 +269,7 @@ a.card:hover .ph { opacity: .75; }
 .case-editor .sec .ph, .case-editor .duo .ph { border-radius: 16px; }
 @media (min-width: 768px) { .case-editor .sec .ph, .case-editor .duo .ph { border-radius: 24px; } }
 .case-save .shot { background: #f6f8fa; }
+/* Figma panel colors (latest pass) */
+.case-save .shot, .case-save .result-panel, .case-editor .sec .ph { background: #f1f3f5; }
+.case-save .sec .ph-wide { background: #f6f8fa; }
+.case-editor .ph-hero { background: #f6f8fa; }
