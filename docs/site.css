@@ -268,3 +268,4 @@ a.card:hover .ph { opacity: .75; }
 .case-save .sec-results .lesson-b .body.stack { gap: 20px; }
 .case-editor .sec .ph, .case-editor .duo .ph { border-radius: 16px; }
 @media (min-width: 768px) { .case-editor .sec .ph, .case-editor .duo .ph { border-radius: 24px; } }
+.case-save .shot { background: #f6f8fa; }
