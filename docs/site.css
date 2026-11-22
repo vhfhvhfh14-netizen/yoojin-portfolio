@@ -264,3 +264,7 @@ a.card:hover .ph { opacity: .75; }
 @media (min-width: 768px) {
   .case-save .pager, .case-editor .pager { grid-template-columns: repeat(2, minmax(0, 400px)); justify-content: space-between; }
 }
+/* Figma: Lesson items gap 20; widget editor image panels rounded 24 (hero excluded) */
+.case-save .sec-results .lesson-b .body.stack { gap: 20px; }
+.case-editor .sec .ph, .case-editor .duo .ph { border-radius: 16px; }
+@media (min-width: 768px) { .case-editor .sec .ph, .case-editor .duo .ph { border-radius: 24px; } }
