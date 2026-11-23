@@ -282,3 +282,4 @@ a.card:hover .ph { opacity: .75; }
 .case-tab .lesson-item p:not(.lesson-title):not(.reg) { font-weight: 500; }
 @media (min-width: 768px) { .case-tab .header + .sec { margin-top: 0; } }
 .case-tab .result-panel { background: #f6f8fa; }
+.case-tab .sec .body.stack.gap10 { gap: 10px; }
