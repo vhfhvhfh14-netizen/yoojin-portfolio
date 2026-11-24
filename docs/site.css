@@ -283,3 +283,9 @@ a.card:hover .ph { opacity: .75; }
 @media (min-width: 768px) { .case-tab .header + .sec { margin-top: 0; } }
 .case-tab .result-panel { background: #f6f8fa; }
 .case-tab .sec .body.stack.gap10 { gap: 10px; }
+.hero-shot { display: block; width: 100%; height: auto; }
+.case-tab .sec.split .body .points.points-draft { margin: 10px 0 0; }
+.case-tab .split .body .points-draft li { padding: 16px 10px 16px 46px; }
+.case-tab .split .body .points-draft li:first-child { border-top: 0; }
+.case-tab .split .body .points-draft li:last-child { border-bottom: 0; }
+.case-tab .split .body .points-draft li::before { left: 10px; top: 18.5px; }
