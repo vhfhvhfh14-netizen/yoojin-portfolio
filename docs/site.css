@@ -289,3 +289,6 @@ a.card:hover .ph { opacity: .75; }
 .case-tab .split .body .points-draft li:first-child { border-top: 0; }
 .case-tab .split .body .points-draft li:last-child { border-bottom: 0; }
 .case-tab .split .body .points-draft li::before { left: 10px; top: 18.5px; }
+.case-tab .sec:not(.split) .body .points { margin: 27px 0 0; }
+.case-tab .sec:not(.split) .body .points li { padding-top: 15px; padding-bottom: 15px; }
+.case-tab .sec:not(.split) .body .points li::before { top: 16px; }
