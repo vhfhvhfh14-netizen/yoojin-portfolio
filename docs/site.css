@@ -301,7 +301,7 @@ img.ph.thumb { display: block; height: auto; padding: 0; object-fit: cover; back
 /* Stacked section images: wider side margins so images sit smaller than the full content width */
 @media (min-width: 768px) {
   .sec:not(.split) > .shot, .sec:not(.split) > .ph-wide, .sec:not(.split) > .ph-short, .sec:not(.split) > .result-panel, .sec-duo .duo {
-    width: min(84%, 1040px); margin-left: auto; margin-right: auto;
+    width: min(92%, 1140px); margin-left: auto; margin-right: auto;
   }
 }
 /* Split sections stack between 768–1023px: keep the near-square image from filling the full width */
