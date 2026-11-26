@@ -298,3 +298,12 @@ img.ph.thumb { display: block; height: auto; padding: 0; object-fit: cover; back
 .case-editor .ph.ph-steps { color: #212121; font-size: 15px; font-weight: 600; line-height: 27px; text-align: left; }
 @media (min-width: 768px) { .case-editor .ph.ph-steps { justify-content: flex-start; padding: 16px 0 0 26.61%; } }
 @media (max-width: 767px) { .case-editor .ph.ph-steps { aspect-ratio: auto; padding: 32px 24px; } }
+/* Stacked section images: cap height to the viewport so caption + title stay on screen with the image */
+@media (min-width: 768px) {
+  .sec:not(.split) > .ph-wide, .sec:not(.split) > .result-panel {
+    width: min(100%, max(720px, calc((100svh - 280px) * 1240 / 630)));
+    margin-left: auto; margin-right: auto;
+  }
+  .sec:not(.split) > img.shot { width: auto; max-width: 100%; max-height: max(366px, calc(100svh - 280px)); margin-left: auto; margin-right: auto; }
+  .sec-duo .duo { max-width: max(900px, calc((100svh - 280px) * 1220 / 630 + 20px)); margin-left: auto; margin-right: auto; }
+}
