@@ -292,3 +292,5 @@ a.card:hover .ph { opacity: .75; }
 .case-tab .sec:not(.split) .body .points { margin: 27px 0 0; }
 .case-tab .sec:not(.split) .body .points li { padding-top: 15px; padding-bottom: 15px; }
 .case-tab .sec:not(.split) .body .points li::before { top: 16px; }
+.case-tab .split .body .points-draft li { padding-left: 44px; }
+.case-tab .split .body .points-draft li::before { width: 20px; height: 20px; line-height: 20px; background: #454549; top: 19.5px; }
