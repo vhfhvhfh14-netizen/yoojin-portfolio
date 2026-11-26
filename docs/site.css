@@ -28,7 +28,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Home ---------- */
 .home-hero { padding: 40px 0 72px; }
-.home-title { font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -0.03em; max-width: 1100px; }
+.home-title { font-size: 36px; font-weight: 400; line-height: 1.3; letter-spacing: -0.03em; max-width: 1100px; }
 .home-statement { margin-top: 40px; font-size: 20px; font-weight: 600; line-height: 1.5; max-width: 900px; }
 .home-profile { margin-top: 16px; font-size: 15px; color: rgba(33,33,33,.75); max-width: 720px; }
 .info-list div { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 4px 0; }
@@ -109,10 +109,11 @@ a.card:hover .ph { opacity: .75; }
   .resume-item { grid-template-columns: 160px 1fr; }
   .home-title { font-size: 56px; }
   .home-statement { font-size: 22px; max-width: 900px; }
-  .home-hero { padding: 64px 0 120px; }
+  .home-hero { padding: 0 0 30px; }
+  .home-profile { margin-top: 20px; }
 }
 @media (min-width: 1024px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
+  .grid { grid-template-columns: repeat(3, 1fr); padding-bottom: 30px; }
 }
 
 /* Numbered points inside a section body */
@@ -304,3 +305,4 @@ img.ph.thumb { display: block; height: auto; padding: 0; object-fit: cover; back
 @media (min-width: 768px) and (max-width: 1023px) {
   .sec.split > .shot { width: min(60%, 500px); margin-left: auto; margin-right: auto; }
 }
+.home-title b { font-weight: 600; }
