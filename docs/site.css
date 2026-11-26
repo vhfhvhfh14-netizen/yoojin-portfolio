@@ -296,14 +296,15 @@ a.card:hover .ph { opacity: .75; }
 .case-tab .split .body .points-draft li::before { width: 20px; height: 20px; line-height: 20px; background: #454549; top: 19.5px; }
 img.ph.thumb { display: block; height: auto; padding: 0; object-fit: cover; background: #f2f2f2; }
 .case-editor .ph.ph-steps { color: #212121; font-size: 15px; font-weight: 600; line-height: 27px; text-align: left; }
-@media (min-width: 768px) { .case-editor .ph.ph-steps { justify-content: flex-start; padding: 16px 0 0 26.61%; } }
+@media (min-width: 768px) { .case-editor .ph.ph-steps { justify-content: center; padding: 16px 32px 0; } }
 @media (max-width: 767px) { .case-editor .ph.ph-steps { aspect-ratio: auto; padding: 32px 24px; } }
-/* Stacked section images: cap height to the viewport so caption + title stay on screen with the image */
+/* Stacked section images: wider side margins so images sit smaller than the full content width */
 @media (min-width: 768px) {
-  .sec:not(.split) > .ph-wide, .sec:not(.split) > .result-panel {
-    width: min(100%, max(720px, calc((100svh - 280px) * 1240 / 630)));
-    margin-left: auto; margin-right: auto;
+  .sec:not(.split) > .shot, .sec:not(.split) > .ph-wide, .sec:not(.split) > .ph-short, .sec:not(.split) > .result-panel, .sec-duo .duo {
+    width: min(84%, 1040px); margin-left: auto; margin-right: auto;
   }
-  .sec:not(.split) > img.shot { width: auto; max-width: 100%; max-height: max(366px, calc(100svh - 280px)); margin-left: auto; margin-right: auto; }
-  .sec-duo .duo { max-width: max(900px, calc((100svh - 280px) * 1220 / 630 + 20px)); margin-left: auto; margin-right: auto; }
+}
+/* Split sections stack between 768–1023px: keep the near-square image from filling the full width */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sec.split > .shot { width: min(60%, 500px); margin-left: auto; margin-right: auto; }
 }
