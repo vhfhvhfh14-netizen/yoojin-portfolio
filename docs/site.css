@@ -294,3 +294,7 @@ a.card:hover .ph { opacity: .75; }
 .case-tab .sec:not(.split) .body .points li::before { top: 16px; }
 .case-tab .split .body .points-draft li { padding-left: 44px; }
 .case-tab .split .body .points-draft li::before { width: 20px; height: 20px; line-height: 20px; background: #454549; top: 19.5px; }
+img.ph.thumb { display: block; height: auto; padding: 0; object-fit: cover; background: #f2f2f2; }
+.case-editor .ph.ph-steps { color: #212121; font-size: 15px; font-weight: 600; line-height: 27px; text-align: left; }
+@media (min-width: 768px) { .case-editor .ph.ph-steps { justify-content: flex-start; padding: 16px 0 0 26.61%; } }
+@media (max-width: 767px) { .case-editor .ph.ph-steps { aspect-ratio: auto; padding: 32px 24px; } }
